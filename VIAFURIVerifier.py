@@ -30,7 +30,6 @@ def parse_bf(root, d_translate):
         return d_translate
     else:
         for child in root:
-            print(child.tag)
             if child.tag == "{http://id.loc.gov/ontologies/bibframe/}identifiedBy":
                 for grandchild in child:
                     if grandchild.tag == "{http://id.loc.gov/ontologies/bibframe/}Identifier":
@@ -52,3 +51,5 @@ def viaf_check(inputfn,outputfn):
     tree.write(outputfn)
     return
 
+if __name__ == "__main__":
+    viaf_check(sys.argv[1], sys.argv[2])
